@@ -33,7 +33,7 @@ const validadorRegistro = Joi.object({
 
 const registrarUsuario = async (req, res) => {
   try {
-    const { error } = validadorRegistro.validate(req.body, { abortEarly: true });
+    const { error } = validadorRegistro.validate(req.body, { abortEarly: false });
 
     if (error) {
       const mensajesErrores = error.details.map(detail => detail.message).join('|');//map == mapear objeto o recorrer arreglo objetos y guarda los errores
