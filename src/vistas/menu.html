@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokemon App</title>
+  <style>
+    /* Container styling for flex layout */
+    .container {
+      display: flex;
+      align-items: flex-start; /* Align items to the top */
+    }
+    .center {
+        text-align: center;
+    }
+
+    /* Button area */
+    .button-area {
+      margin-right: 100px;
+      padding-top: 10px;
+      padding-bottom:20px;
+      padding-left: 30px;
+      padding-right: 40px;
+      display: inline-block;
+      margin: 2%;
+    }
+    .button-area  button {
+      font-size: 18px;         /* Increase font size */
+      padding: 10px 20px;      /* Add padding for larger size */
+      margin-bottom: 10px;     /* Space between buttons */
+      width: 200px;            /* Set button width */
+      height: 50px;            /* Set button height */
+      cursor: pointer; 
+    }
+    /* Content area styling */
+    .content-area {
+      border: 1px solid #ddd;
+      padding: 10px;
+      min-width: 1000px; /* Minimum width for content area */
+      min-height: 700px;
+      text-align: center;
+      margin: auto;
+    }
+    .content-area h2 {
+      font-size: 50px;
+      font-family: Arial;
+    }
+    .content-area th {
+      font-size: 35px;
+      font-family: Arial;
+      text-align: left;
+    }
+    .content-area td {
+      min-width: 250px;
+      padding: 40px;
+    }
+    .content-area input {
+      font-size: 18px;         /* Increase font size */
+      padding: 10px 20px;      /* Add padding for larger size */
+      margin-bottom: 10px;     /* Space between buttons */
+      width: 200px;            /* Set button width */
+      height: 40px;            /* Set button height */
+      cursor: pointer; 
+    }
+    
+  </style>
+</head>
+<body>
+
+  <h1 class="center">POKEMON APP</h1>
+
+  <div class="container">
+    <!-- Button area -->
+    <div class="button-area">
+      <button onclick="showRegisterUser()">Registrar Usuario</button><br><br>
+      <button onclick="showRegisterPokemon()">Registrar Pokemon</button><br><br>
+      <button onclick="showSelectUser()">Usuarios activos</button>
+    </div>
+
+    <!-- Content area -->
+    <div id="contentDiv" class="content-area" >
+      <p>Seleccione alguna de las opciones para empezar!</p>
+    </div>
+  </div>
+
+  <script src="menu.js"></script>
+
+</body>
+</html>
