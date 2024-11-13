@@ -21,6 +21,16 @@ const registrarPokemon = async (req, res) => {
   }
 };
 
+const listarPokemons = async (req, res) => {
+  try{
+    const Pokemons = await Pokemon.findAll();
+    res.status(200).json({mensaje: "Pokemones encontrados", resultado: Pokemons});
+  } catch (error){
+    res.status(500).json({ mensaje: "Error de servidor, trata de nuevo mas tarde",resultado:null });
+  }
+}
+
 module.exports = {
-    registrarPokemon
+    registrarPokemon,
+    listarPokemons
 };

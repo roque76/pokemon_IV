@@ -62,7 +62,36 @@
       height: 40px;            /* Set button height */
       cursor: pointer; 
     }
-    
+
+    #contentDiv table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: Arial, sans-serif;
+    }
+
+    #contentDiv th, #contentDiv td {
+      text-align: left;
+      padding: 8px;
+      font-size: 26px; /* Adjust the size as needed */
+    }
+
+    #contentDiv th {
+      background-color: #f2f2f2;
+    }
+
+    #contentDiv tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    #contentDiv button {
+  font-size: 15px;         /* Increase font size */
+  padding: 10px 20px;      /* Add padding for larger size */
+  margin-bottom: 10px;     /* Space between buttons */
+  width: 200px;            /* Set button width */
+  height: 50px;            /* Set button height */
+  cursor: pointer;         /* Change cursor to pointer */
+}
+
   </style>
 </head>
 <body>
@@ -74,7 +103,7 @@
     <div class="button-area">
       <button onclick="showRegisterUser()">Registrar Usuario</button><br><br>
       <button onclick="showRegisterPokemon()">Registrar Pokemon</button><br><br>
-      <button onclick="showSelectUser()">Usuarios activos</button>
+      <button onclick="showPokemons()">Listar Pokemon</button>
     </div>
 
     <!-- Content area -->

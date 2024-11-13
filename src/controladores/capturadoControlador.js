@@ -9,6 +9,16 @@ const capturarPokemon = async (req, res) => {
   }
 };
 
+const listarCapturados = async (req, res) => {
+  try{
+    const capturados = await Capturado.findAll();
+    res.status(200).json({mensaje: "Capturados encontrados", resultado: capturados});
+  } catch (error){
+    res.status(400).json({ mensaje: "Error en servidor, trata de nuevo mas tarde",resultado:null });
+  }
+}
+
 module.exports = {
-    capturarPokemon
+    capturarPokemon,
+    listarCapturados
 };
