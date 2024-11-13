@@ -260,8 +260,7 @@ function showRegisterPokemon() {
                 nuevaFila.insertCell(0).textContent = user.cedula;
                 nuevaFila.insertCell(1).textContent = user.email;
                 nuevaFila.insertCell(2).textContent = user.nombre;
-                nuevaFila.insertCell(3).textContent = user.nombre;
-                nuevaFila.insertCell(2).textContent = user.nombre;
+                nuevaFila.insertCell(3).textContent = user.edad;
             })
             document.getElementById('resultado').innerText = 'Usuarios listados'
         } else{
