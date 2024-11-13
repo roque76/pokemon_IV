@@ -225,3 +225,50 @@ function showRegisterPokemon() {
     }
   }
   
+
+  async function showUsers() {
+    document.getElementById('contentDiv').innerHTML=`
+            <table id="tablaUsers">
+                <tr>
+                    <th>Cedula</th>
+                    <th>Email</th>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                </tr>
+                <tbody>
+                </tbody>
+            </table>
+            <h1 id="resultado"></h1>
+            `;
+            
+    try{
+        const respuesta = await fetch('http://3.144.3.134:3000/api/usuario/listar',{
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        const resultado = await respuesta.json();
+        
+
+        if(resultado.resultado && resultado.resultado.length > 0){
+            const tablaUser = document.getElementById('tablaUsers').getElementsByTagName('tbody')[0];
+            resultado.resultado.forEach(user => {
+                const nuevaFila = tablaUser.insertRow();
+
+                nuevaFila.insertCell(0).textContent = user.cedula;
+                nuevaFila.insertCell(1).textContent = user.email;
+                nuevaFila.insertCell(2).textContent = user.nombre;
+                nuevaFila.insertCell(3).textContent = user.nombre;
+                nuevaFila.insertCell(2).textContent = user.nombre;
+            })
+            document.getElementById('resultado').innerText = 'Usuarios listados'
+        } else{
+            document.getElementById('resultado').innerText = 'No se encontraron usuarios'
+        }
+
+    } catch (error){
+        console.log('etwas')
+    }
+  }

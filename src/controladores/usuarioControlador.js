@@ -69,6 +69,15 @@ const registrarUsuario = async (req, res) => {
   }
 };
 
+const listarUsuarios = async (req, res) => {
+  try{
+    const usuarios = await Usuario.findAll();
+    res.status(200).json({mensaje: "Usuarios encontrados", resultado: usuarios});
+  } catch (error){
+    res.status(500).json({ mensaje: "Error de servidor, trata de nuevo mas tarde",resultado:null });
+  }
+}
 module.exports = {
-    registrarUsuario
+    registrarUsuario,
+    listarUsuarios
 };
