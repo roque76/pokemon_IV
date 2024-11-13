@@ -41,7 +41,7 @@ function showRegisterUser() {
       
         try {
           // Make the POST request to the server
-          const response = await fetch('http://localhost:3000/api/usuario/registrar', {
+          const response = await fetch('http://3.144.3.134:3000/api/usuario/registrar', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
@@ -112,7 +112,7 @@ function showRegisterPokemon() {
         const data = Object.fromEntries(formData.entries());
 
         try {
-            const respuesta = await fetch('http://localhost:3000/api/pokemon/registrar', {
+            const respuesta = await fetch('http://3.144.3.134:3000/api/pokemon/registrar', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -153,7 +153,7 @@ function showRegisterPokemon() {
             `;
             
     try{
-        const respuesta = await fetch('http://localhost:3000/api/pokemon/listar',{
+        const respuesta = await fetch('http://3.144.3.134:3000/api/pokemon/listar',{
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -197,7 +197,7 @@ function showRegisterPokemon() {
 
   async function confirmCapture(pokemonId, userId) {
     try {
-      const response = await fetch('http://localhost:3000/api/captura/capturar', {
+      const response = await fetch('http://3.144.3.134:3000/api/captura/capturar', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
